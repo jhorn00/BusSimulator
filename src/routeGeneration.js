@@ -1,4 +1,3 @@
-//Made by James Horn July 2020
 function routeGeneration(start, end, busses, graph,algo){
     //use either A* or dijkstra depending on the passed string
     let aPath;
@@ -47,10 +46,8 @@ function routeGeneration(start, end, busses, graph,algo){
         //see if new request could even fit
         let compare = busses[k].passengers;
 	    if(numStart > 0 && numEnd > 0 && startIndex < endIndex){
-            for(let i = 0; i < busses[k].path.length; i++){
-                if(i < endIndex){
-                    compare += busses[k].path[i].change;
-                }
+            for(let i = 0; i < endIndex; i++){
+                compare += busses[k].path[i].change;
             }
         }
         else{
