@@ -46,10 +46,12 @@ function routeGeneration(start, end, busses, graph,algo){
 
         //see if new request could even fit
         let compare = busses[k].passengers;
-	    if(numStart > 0 && numEnd > 0 && startIndex < endIndex){
-            for(let i = 0; i < endIndex; i++){
-                compare += busses[k].path[i].change;
-            }
+	if(numStart > 0 && numEnd > 0 && startIndex < endIndex){
+            for(let i = 0; i < busses[k].path.length; i++){
+                if(i < endIndex){
+                    compare += busses[k].path[i].change;
+                }
+	    }
         }
         else{
             for(let i = 0; i < busses[k].path.length - 1; i++){
