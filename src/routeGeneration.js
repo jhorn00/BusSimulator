@@ -51,7 +51,7 @@ function routeGeneration(start, end, busses, graph,algo){
                 if(i < endIndex){
                     compare += busses[k].path[i].change;
                 }
-	    }
+            }
         }
         else{
             for(let i = 0; i < busses[k].path.length - 1; i++){
